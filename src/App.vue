@@ -1,7 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
+  <nav>____
+    <router-link to="/">Home</router-link> ____
+    <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
   <router-view/>
@@ -18,6 +18,8 @@
 
 nav {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 nav a {

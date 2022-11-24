@@ -16,7 +16,7 @@ h1:hover {
 }
 h3 {
     font-size: 60px;
-    margin: 40px 0 0;
+    margin: 90px 0 0;
 }
 h3:hover {
     color: blue;
