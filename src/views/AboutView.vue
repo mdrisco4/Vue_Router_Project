@@ -1,3 +1,17 @@
+new Vue({
+  el: '#app'
+  data () {
+    return {
+      info:  null
+    }
+  },
+  mounted () {
+    axios
+    .get(https://api.coindesk.com/v1/bpi/currentprice.json)
+    .then(response => (this.info = response))
+  }
+})
+
 <template>
   <div class="about">
     <h1>This is an about page</h1>
@@ -6,6 +20,9 @@
   <p>Filling out some paragraphs here.</p>
   <P>Here is a second paragraph</P>
   <p>Here is the conclusion</p>
+  <div id="app">
+    <!-- {{ info }} -->
+  </div>
 </template>
 
 <style scoped>

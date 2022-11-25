@@ -1,11 +1,29 @@
+new Vue({
+  el: '#app'
+  data () {
+    return {
+      info:  null
+    }
+  },
+  mounted () {
+    axios
+    .get(https://api.coindesk.com/v1/bpi/currentprice.json)
+    .then(response => (this.info = response))
+  }
+})
+
 <template>
   <nav>____
     <router-link to="/">Home</router-link> ____
     <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
+  <!-- <div id="app">
+    {{ info }}
+  </div> -->
   <router-view/>
 </template>
+
 
 <style>
 #app {
