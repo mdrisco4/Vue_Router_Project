@@ -4,7 +4,19 @@
     <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
-  <h1>Call API</h1>
+  <h1>Users Data</h1>
+  <ul class="item" v-for="item in list" :key="item.id">
+    <li>{{item.id}}</li>
+    <li>{{item.email}}</li>
+    <li>{{item.first_name}} {{item.last_name}}</li>
+    <li>
+      <img :src="item.avatar" />
+    </li>
+  </ul>
+  <!-- <p v-for="item in list" :key="item.id">
+    {{item.id}} - {{item.email}} , {{item.first_name}} {{item.last_name}} : {{item.avatar}}
+
+  </p> -->
   <router-view />
 </template>
 
@@ -12,15 +24,39 @@
 import axios from "axios";
 export default {
   name: "App",
+  data()
+  {
+    return {
+      list:[]
+    }
+  },
 
   async  mounted() {
     let result = await axios.get("https://reqres.in/api/users?page=1");
     console.log(result.data.data)
+    this.list=result.data.data
   },
 };
 </script>
 
 <style>
+.item {
+ display: flex;
+ justify-content: center;
+}
+
+.item li {
+ display: inline-block;
+ border: 1px solid black;
+ width: 180px;
+ text-align: center;
+ padding: 5px;
+}
+
+.item img {
+  width: 50px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
