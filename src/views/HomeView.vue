@@ -9,6 +9,10 @@
       <img :src="item.avatar" />
     </li>
   </ul>
+  <!-- <p v-for="item in list" :key="item.id">
+    {{item.id}} - {{item.email}} , {{item.first_name}} {{item.last_name}} : {{item.avatar}}
+
+  </p> -->
   </div>
 </template>
 

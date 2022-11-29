@@ -1,16 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-// import Vue from 'vue'
-// import App from './App'
-// import axios from 'axios'
-
-// Vue.prototype.$http = axios
-
-// app = new Vue({
-//   el: '#app',
-//   components: { App },
-//   template: '<App/>'
-// })
 
 const routes = [
   {

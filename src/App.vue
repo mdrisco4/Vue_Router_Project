@@ -4,19 +4,7 @@
     <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
-  <!-- <h1>Users Data</h1>
-  <ul class="item" v-for="item in list" :key="item.id">
-    <li>{{item.id}}</li>
-    <li>{{item.email}}</li>
-    <li>{{item.first_name}} {{item.last_name}}</li>
-    <li>
-      <img :src="item.avatar" />
-    </li>
-  </ul> -->
-  <!-- <p v-for="item in list" :key="item.id">
-    {{item.id}} - {{item.email}} , {{item.first_name}} {{item.last_name}} : {{item.avatar}}
-
-  </p> -->
+  
   <router-view />
 </template>
 
