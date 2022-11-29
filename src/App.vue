@@ -1,29 +1,24 @@
-<!-- new Vue({
-  el: '#app'
-  data () {
-    return {
-      info:  null
-    }
-  },
-  mounted () {
-    axios
-    .get(https://api.coindesk.com/v1/bpi/currentprice.json)
-    .then(response => (this.info = response))
-  }
-}) -->
-
 <template>
-  <nav>____
-    <router-link to="/">Home</router-link> ____
+  <nav>
+    ____ <router-link to="/">Home</router-link> ____
     <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
-  <!-- <div id="app">
-    {{ info }}
-  </div> -->
-  <router-view/>
+  <h1>Call API</h1>
+  <router-view />
 </template>
 
+<script>
+import axios from "axios";
+export default {
+  name: "App",
+
+  async  mounted() {
+    let result = await axios.get("https://reqres.in/api/users?page=1");
+    console.log(result.data.data)
+  },
+};
+</script>
 
 <style>
 #app {
