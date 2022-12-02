@@ -17,7 +17,7 @@
 </template>
 
 <script>
-// API Key: 2831E892-EC06-4D1D-9A75-8D12017D06F8
+// API Key: 2831E892-EC06-4D1D-9A75-8D12017D06F8      -CoinAPI.io
 // GET /v1/orderbooks/{symbol_id}/latest?limit={limit}&limit_levels={limit_levels}
 // GET /v1/orderbooks/{symbol_id}/history?time_start={time_start}&time_end={time_end}&limit={limit}&limit_levels={limit_levels}
 import axios from "axios";
@@ -33,6 +33,10 @@ export default {
   },
 
   async mounted() {
+
+    // let result = await axios.get("https://rest.coinapi.io/v1/quotes/latest");
+    // let result = await axios.get("https://api.coinranking.com/v2");
+
     let result = await axios.get("https://reqres.in/api/users?page=1");
     console.log(result.data.data);
     this.list = result.data.data;
