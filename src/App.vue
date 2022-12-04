@@ -4,7 +4,22 @@
     <router-link to="/about">About</router-link> ____
     <router-link to="/animations">Animations</router-link>
   </nav>
-  
+  <!-- <ul class="grid">
+    <li v-for="content in contents" :key="content.id">
+      <div class="image">
+        <img :src="content.imageSrc" />
+      </div>
+    </li>
+  </ul>
+  <ul class="list">
+    <li v-for="content in contents" :key="content.id">
+      <img :src="content.imageSrc" />
+      <div class="listcontent">
+        <h2>{{content.title}}</h2>
+        <p>{{content.description}}</p>
+      </div>
+  </li>
+  </ul> -->
   <router-view />
 </template>
 
@@ -29,29 +44,46 @@ import axios from "axios";
 // };
 
 
+// export default {
+//     data() {
+//         return {
+//             res: [],
+//         };
+//     },
+//     name: "App",
+//     methods: {
+//         // The get method called by the function
+//         onGet() {
+//             axios
+//                 .get("https://jsonplaceholder.typicode.com/todos")
+//                 .then((response) => {
+//                     console.log(response);
+//                     console.log("hello")
+//                     // using stringify to beautify the output
+//                     this.res = JSON.stringify(response.data);
+//                 })
+//                 .catch((errors) => {
+//                     console.log(errors); // Errors
+//                 });
+//         },
+//     },
+// };
+
+
 export default {
     data() {
         return {
+          contents: null,
             res: [],
         };
     },
-    name: "App",
-    methods: {
-        // The get method called by the function
-        onGet() {
-            axios
-                .get("https://jsonplaceholder.typicode.com/todos")
-                .then((response) => {
-                    console.log(response);
-                    console.log("hello")
-                    // using stringify to beautify the output
-                    this.res = JSON.stringify(response.data);
-                })
-                .catch((errors) => {
-                    console.log(errors); // Errors
-                });
-        },
-    },
+    mounted () {
+      axios
+      // .get('https//api.coindesk.com/v1/bpi/currentprice.json')
+      .get('https//bibekshakya.com/demo/vue/switchable-grid/api/products/json')
+      .then(response => (this.contents = response))
+    }
+    
 };
 
 

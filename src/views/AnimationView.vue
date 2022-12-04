@@ -11,7 +11,7 @@ import axios from "axios";
 
 const options = {
   method: "GET",
-  url: "https://api.coinranking.com/v2/coins",
+  url: "http://localhost:8080/v2/coins",
 
   headers: {
     "x-access-token": "coinranking255ccad42a9431bab909c2bce7776035ddcdfce2cf9306fc",
