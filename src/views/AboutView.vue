@@ -6,13 +6,39 @@
   <p>Filling out some paragraphs here.</p>
   <P>Here is a second paragraph</P>
   <p>Here is the conclusion</p>
+  <div>{{res}}</div>
   <div id="app">
     <!-- {{ info }} -->
   </div>
 </template>
 
-
-
+<!-- API Key: coinranking255ccad42a9431bab909c2bce7776035ddcdfce2cf9306fc   -CoinRanking -->
+<script>
+import axios from "axios";
+export default {
+    data() {
+        return {
+            res: [],
+        };
+    },
+    name: "App",
+    methods: {
+        // The get method called by the function
+        onGet() {
+            axios
+                .get("https://jsonplaceholder.typicode.com/todos")
+                .then((response) => {
+                    console.log(response);
+                    // using stringify to beautify the output
+                    this.res = JSON.stringify(response.data);
+                })
+                .catch((errors) => {
+                    console.log(errors); // Errors
+                });
+        },
+    },
+};
+</script>
 
 
 <style scoped>
