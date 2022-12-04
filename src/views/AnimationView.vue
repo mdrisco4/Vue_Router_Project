@@ -12,17 +12,13 @@ import axios from "axios";
 const options = {
   method: "GET",
   url: "http://localhost:8080/v2/coins",
+  // axios.defaults.baseURL: "api";
 
   headers: {
     "x-access-token": "coinranking255ccad42a9431bab909c2bce7776035ddcdfce2cf9306fc",
-    
-    // "Access-Control-Allow-Origin": "http://localhost:8080",
-    "Access-Control-Allow-Origin": "*",
 
   },
 };
-// "Access-Control-Allow-Origin": "*",
-// "Access-Control-Allow-Headers:{$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}"
 
 axios
   .request(options)

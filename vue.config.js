@@ -1,7 +1,15 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: true,
+  // transpileDependencies: true,
+ 
+    
   devServer: {
-    proxy: "https://api.coinranking.com/v2/coins"
-  }
+    proxy: {
+      "^/api": {
+      target: "https://api.coinranking.com",
+      ws: true,
+      changeOrigin: true
+    }
+ }
+},
 })
